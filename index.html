@@ -331,122 +331,31 @@
                     <button class="btn btn-primary">Kirim</button>
                 </div>
             </form>
-        </div>
-    </section>
 
-    <section id="expression" class="expression">
-        <section class="wishes-header">
-            <h2><i class="fas fa-comment-alt"></i> Ucapan & Doa</h2>
-            <p>Bagikan ucapan dan doa terbaik Anda untuk kami</p>
-        </section>
-        
-        <div class="new-wish-form">
-            <h3 class="form-title">Tulis Ucapan & Doa Anda</h3>
-            <div class="form-group">
-                <textarea id="wish-text" placeholder="Tuliskan ucapan dan doa terbaik Anda di sini..."></textarea>
-            </div>
-            <div class="image-upload">
-                <label for="wish-image">
-                    <i class="fas fa-camera"></i> Tambahkan Foto (Opsional)
-                </label>
-                <input type="file" id="wish-image" accept="image/*" style="display: none;">
-                <div class="image-preview" id="image-preview"></div>
-            </div>
-            <button id="submit-wish">Kirim</button>
-        </div>
-        
-        <div id="wishes-container">
-            <!-- Contoh ucapan -->
-            <div class="wish-box" data-id="1">
-                <div class="wish-header">
-                    <div class="avatar">A</div>
-                    <div class="wish-info">
-                        <div class="name">Ayu</div>
-                        <div class="time">2 jam yang lalu</div>
-                    </div>
-                </div>
-                <div class="wish-content">
-                    <div class="wish-text">
-                        Selamat atas pernikahan kalian! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah. Semoga selalu diberkahi Allah dalam setiap langkah kehidupan rumah tangga kalian. Amin.
-                    </div>
-                    <img src="img/menikah.png" alt="Daffa & Widia 1" class="img-fluid w-100 rounded">
-                </div>
-                <div class="reaction-bar">
-                    <div class="like-count"><span id="like-count-1">5</span> reaksi</div>
-                </div>
-                <div class="reaction-options">
-                    <div class="reaction-btn like-btn" onclick="reactToPost(1, 'like')"><i class="far fa-thumbs-up"></i> Suka</div>
-                    <div class="reaction-btn love-btn" onclick="reactToPost(1, 'love')"><i class="fas fa-heart"></i> ❤</div>
-                    <div class="reaction-btn pray-btn" onclick="reactToPost(1, 'pray')"><i class="fas fa-praying-hands"></i> 🤲🏻</div>
-                    <div class="reaction-btn smile-btn" onclick="reactToPost(1, 'smile')"><i class="far fa-smile"></i> ☺</div>
-                </div>
-                
-                <div class="reply">
-                    <!-- Contoh komentar -->
-                    <div class="reply" data-id="1">
-                        <div class="comment-avatar">B</div>
-                        <div class="comment-content">
-                            <div class="comment-name">Budi</div>
-                            <div class="comment-text">Amin ya Rabbal 'alamin</div>
-                        </div>
-                    </div>
-                    <div class="reply" data-id="2">
-                        <div class="comment-avatar">C</div>
-                        <div class="comment-content">
-                            <div class="comment-name">Fadhiil</div>
-                            <div class="comment-text">Ikut mengaminkan doanya Rahmat</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Form reply -->
-                    <div class="reply-form" id="reply-form-1">
-                        <textarea placeholder="Tulis balasan..."></textarea>
-                        <button onclick="postReply(1)">Kirim</button>
-                    </div>
-                    
-                    <div class="reply-btn" style="margin-top: 10px;">
-                        <span class="reply-btn" onclick="toggleReplyForm(1)" style="color: var(--secondary-color); font-size: 13px; cursor: pointer;">
-                            <i class="fas fa-reply"></i> Balas
-                        </span>
-                    </div>
-                </div>
-            </div>
+            <div class="row justify-content-center mt-5">
+                <div class="wishes-section">
+                    <h2 class="section-title">Ucapan & Doa</h2>
             
-            <!-- Contoh ucapan kedua -->
-            <div class="wish-box" data-id="2">
-                <div class="wish-header">
-                    <div class="avatar">D</div>
-                    <div class="wish-info">
-                        <div class="name">Doni</div>
-                        <div class="time">Kemarin, 15:30</div>
+                    <div class="wish-form">
+                        <div class="form-group">
+                            <textarea id="wish-text" placeholder="Tulis ucapan atau doa untuk mempelai..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <div class="upload-wrapper">
+                                <label for="wish-image" class="upload-btn">Unggah Gambar</label>
+                                <input type="file" id="wish-image" class="file-input" accept="image/*">
+                                <span id="file-name" class="file-name"></span>
+                            </div>
+                        </div>
+                        <button id="submit-wish" class="submit-btn">Kirim</button>
                     </div>
-                </div>
-                <div class="wish-content">
-                    <div class="wish-text">
-                        Selamat menempuh hidup baru! Semoga pernikahan ini membawa kebahagiaan yang tiada akhir untuk kalian berdua. Jangan lupa selalu meluangkan waktu untuk quality time berdua meskipun sudah punya anak nanti.
+            
+                    <div class="wishes-container" id="wishes-container">
+                        <!-- Wish items will be loaded here -->
                     </div>
-                </div>
-                <div class="reaction-bar">
-                    <div class="like-count"><span id="like-count-2">3</span> reaksi</div>
-                </div>
-                <div class="reaction-options">
-                    <div class="reaction-btn like-btn" onclick="reactToPost(2, 'like')"><i class="far fa-thumbs-up"></i> Suka</div>
-                    <div class="reaction-btn love-btn" onclick="reactToPost(2, 'love')"><i class="fas fa-heart"></i> ❤</div>
-                    <div class="reaction-btn pray-btn" onclick="reactToPost(2, 'pray')"><i class="fas fa-praying-hands"></i> 🤲🏻</div>
-                    <div class="reaction-btn smile-btn" onclick="reactToPost(2, 'smile')"><i class="far fa-smile"></i> ☺</div>
-                </div>
-                
-                <div class="reply">
-                    <!-- Form reply -->
-                    <div class="reply-form" id="reply-form-2">
-                        <textarea placeholder="Tulis balasan..."></textarea>
-                        <button onclick="postReply(2)">Kirim</button>
-                    </div>
-                    
-                    <div class="reply-btn" style="margin-top: 10px;">
-                        <span class="reply-btn" onclick="toggleReplyForm(2)" style="color: var(--secondary-color); font-size: 13px; cursor: pointer;">
-                            <i class="fas fa-reply"></i> Balas
-                        </span>
+            
+                    <div class="load-more hidden" id="load-more">
+                        <button class="load-more-btn" id="load-more-btn">Lihat Selanjutnya</button>
                     </div>
                 </div>
             </div>
@@ -661,238 +570,325 @@
     </script>
 
     <script>
-        // Simpan data wish sementara
-        let wishes = [
-            {
-                id: 1,
-                name: 'Rahmat Fadil',
-                text: 'Selamat atas pernikahan kalian! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah. Semoga selalu diberkahi Allah dalam setiap langkah kehidupan rumah tangga kalian. Amin.',
-                image: 'img/menikah.png',
-                time: '2 jam yang lalu',
-                reactions: {
-                    like: 3,
-                    love: 2,
-                    pray: 0,
-                    smile: 0
-                },
-                comments: [
-                    { id: 1, name: 'Budi', text: 'Amin ya Rabbal \'alamin' },
-                    { id: 2, name: 'Fadhiil', text: 'Ikut mengaminkan doanya Rahmat' }
-                ]
-            },
-            {
-                id: 2,
-                name: 'Doni',
-                text: 'Selamat menempuh hidup baru! Semoga pernikahan ini membawa kebahagiaan yang tiada akhir untuk kalian berdua. Jangan lupa selalu meluangkan waktu untuk quality time berdua meskipun sudah punya anak nanti.',
-                image: null,
-                time: 'Kemarin, 15:30',
-                reactions: {
-                    like: 2,
-                    love: 1,
-                    pray: 0,
-                    smile: 0
-                },
-                comments: []
-            }
-        ];
-        
-        // Ambil nama dari URL jika ada
-        function getSenderName() {
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize
+            const wishesKey = 'wedding_wishes';
+            let allWishes = JSON.parse(localStorage.getItem(wishesKey)) || [];
+            let displayedCount = 0;
+            const maxInitialDisplay = 5;
+            
+            // DOM Elements
+            const wishesContainer = document.getElementById('wishes-container');
+            const wishText = document.getElementById('wish-text');
+            const wishImage = document.getElementById('wish-image');
+            const fileName = document.getElementById('file-name');
+            const submitBtn = document.getElementById('submit-wish');
+            const loadMoreBtn = document.getElementById('load-more-btn');
+            const loadMoreSection = document.getElementById('load-more');
+            
+            // Get user name from URL
             const urlParams = new URLSearchParams(window.location.search);
-            const nameParam = urlParams.get('n');
-            return nameParam ? nameParam.charAt(0).toUpperCase() + nameParam.slice(1) : 'Tam';
-        }
-        
-        // Format waktu
-        function formatTime(postTime) {
-            const now = new Date();
-            const diff = now - postTime;
-            const minutes = Math.floor(diff / 60000);
+            const userName = urlParams.get('n') || 'Tamu Undangan';
             
-            if (minutes < 1) return 'Baru saja';
-            if (minutes < 60) return `${minutes} menit yang lalu`;
-            if (minutes < 1440) return `${Math.floor(minutes/60)} jam yang lalu`;
-            return postTime.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' });
-        }
-        
-        // Handle image upload preview
-        document.getElementById('wish-image').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (!file) return;
+            // Event listeners
+            wishImage.addEventListener('change', updateFileName);
+            submitBtn.addEventListener('click', submitWish);
+            loadMoreBtn.addEventListener('click', loadMoreWishes);
             
-            const previewDiv = document.getElementById('image-preview');
-            previewDiv.innerHTML = '';
+            // Initial load
+            displayWishes();
             
-            const img = document.createElement('img');
-            img.src = URL.createObjectURL(file);
-            img.className = 'preview-image';
-            
-            const removeBtn = document.createElement('div');
-            removeBtn.className = 'remove-image';
-            removeBtn.innerHTML = '×';
-            removeBtn.onclick = function() {
-                previewDiv.innerHTML = '';
-                document.getElementById('wish-image').value = '';
-            };
-            
-            previewDiv.appendChild(img);
-            previewDiv.appendChild(removeBtn);
-        });
-        
-        // Submit wish baru
-        document.getElementById('submit-wish').addEventListener('click', function() {
-            const textField = document.getElementById('wish-text');
-            const imageInput = document.getElementById('wish-image');
-            const text = textField.value.trim();
-            
-            if (!text) {
-                alert('Silakan tulis ucapan terlebih dahulu');
-                return;
+            function updateFileName() {
+                if (wishImage.files.length > 0) {
+                    fileName.textContent = wishImage.files[0].name;
+                } else {
+                    fileName.textContent = '';
+                }
             }
             
-            const senderName = getSenderName();
-            const newWish = {
-                id: wishes.length + 1,
-                name: senderName,
-                text: text,
-                image: imageInput.files[0] ? URL.createObjectURL(imageInput.files[0]) : null,
-                time: 'Baru saja',
-                reactions: {
-                    like: 0,
-                    love: 1, // Default love dari pengirim
-                    pray: 0,
-                    smile: 0
-                },
-                comments: []
-            };
-            
-            wishes.unshift(newWish);
-            renderWishes();
-            
-            // Reset form
-            textField.value = '';
-            document.getElementById('image-preview').innerHTML = '';
-            imageInput.value = '';
-        });
-        
-        // Render semua wishes
-        function renderWishes() {
-            const container = document.getElementById('wishes-container');
-            container.innerHTML = '';
-            
-            wishes.forEach(wish => {
-                const wishBox = document.createElement('div');
-                wishBox.className = 'wish-box';
-                wishBox.setAttribute('data-id', wish.id);
+            function submitWish() {
+                const text = wishText.value.trim();
+                if (!text) return;
                 
-                let totalReactions = Object.values(wish.reactions).reduce((a, b) => a + b, 0);
+                const newWish = {
+                    id: Date.now().toString(),
+                    name: userName,
+                    date: new Date().toLocaleString('id-ID'),
+                    text: text,
+                    image: null,
+                    reactions: {},
+                    replies: []
+                };
                 
-                let imageHtml = '';
-                if (wish.image) {
-                    imageHtml = `<img src="${wish.image}" alt="Ucapan pernikahan dari ${wish.name}" class="wish-image">`;
+                // Handle image upload
+                if (wishImage.files.length > 0) {
+                    const file = wishImage.files[0];
+                    const reader = new FileReader();
+                    
+                    reader.onload = function(e) {
+                        newWish.image = e.target.result;
+                        saveWish(newWish);
+                    };
+                    
+                    reader.readAsDataURL(file);
+                } else {
+                    saveWish(newWish);
+                }
+            }
+            
+            function saveWish(wish) {
+                allWishes.unshift(wish);
+                localStorage.setItem(wishesKey, JSON.stringify(allWishes));
+                
+                // Clear form
+                wishText.value = '';
+                wishImage.value = '';
+                fileName.textContent = '';
+                
+                // Refresh display
+                displayedCount = 0;
+                displayWishes();
+            }
+            
+            function displayWishes() {
+                wishesContainer.innerHTML = '';
+                const wishesToDisplay = allWishes.slice(0, displayedCount + maxInitialDisplay);
+                
+                if (allWishes.length > maxInitialDisplay && displayedCount === 0) {
+                    loadMoreSection.classList.remove('hidden');
                 }
                 
-                let commentsHtml = '';
-                wish.comments.forEach(comment => {
-                    commentsHtml += `
-                    <div class="comment" data-id="${comment.id}">
-                        <div class="comment-avatar">${comment.name.charAt(0)}</div>
-                        <div class="comment-content">
-                            <div class="comment-name">${comment.name}</div>
-                            <div class="comment-text">${comment.text}</div>
-                        </div>
-                    </div>`;
+                wishesToDisplay.forEach(wish => {
+                    const wishElement = createWishElement(wish);
+                    wishesContainer.appendChild(wishElement);
                 });
                 
-                wishBox.innerHTML = `
-                    <div class="wish-header">
-                        <div class="avatar">${wish.name.charAt(0)}</div>
-                        <div class="wish-info">
-                            <div class="name">${wish.name}</div>
-                            <div class="time">${wish.time}</div>
-                        </div>
-                    </div>
-                    <div class="wish-content">
-                        <div class="wish-text">${wish.text}</div>
-                        ${imageHtml}
-                    </div>
-                    <div class="reaction-bar">
-                        <div class="like-count"><span id="like-count-${wish.id}">${totalReactions}</span> reaksi</div>
-                    </div>
-                    <div class="reaction-options">
-                        <div class="reaction-btn like-btn" onclick="reactToPost(${wish.id}, 'like')"><i class="far fa-thumbs-up"></i> Suka</div>
-                        <div class="reaction-btn love-btn" onclick="reactToPost(${wish.id}, 'love')"><i class="fas fa-heart"></i> ❤</div>
-                        <div class="reaction-btn pray-btn" onclick="reactToPost(${wish.id}, 'pray')"><i class="fas fa-praying-hands"></i> 🤲🏻</div>
-                        <div class="reaction-btn smile-btn" onclick="reactToPost(${wish.id}, 'smile')"><i class="far fa-smile"></i> ☺</div>
-                    </div>
-                    
-                    <div class="comments">
-                        ${commentsHtml}
-                        
-                        <div class="reply-form" id="reply-form-${wish.id}">
-                            <textarea placeholder="Tulis balasan..."></textarea>
-                            <button onclick="postReply(${wish.id})">Kirim</button>
-                        </div>
-                        
-                        <div class="reply-btn" style="margin-top: 10px;">
-                            <span class="reply-btn" onclick="toggleReplyForm(${wish.id})" style="color: var(--secondary-color); font-size: 13px; cursor: pointer;">
-                                <i class="fas fa-reply"></i> Balas
-                            </span>
-                        </div>
-                    </div>
-                `;
+                displayedCount += maxInitialDisplay;
                 
-                container.appendChild(wishBox);
-            });
-        }
-        
-        // Reaksi terhadap post
-        function reactToPost(postId, reactionType) {
-            const wishIndex = wishes.findIndex(w => w.id === postId);
-            if (wishIndex !== -1) {
-                wishes[wishIndex].reactions[reactionType]++;
+                if (displayedCount >= allWishes.length) {
+                    loadMoreSection.classList.add('hidden');
+                }
+            }
+            
+            function loadMoreWishes() {
+                displayWishes();
+            }
+            
+            function createWishElement(wish) {
+                const wishDiv = document.createElement('div');
+                wishDiv.className = 'wish-item';
+                wishDiv.dataset.id = wish.id;
+                
+                // Wish header
+                const headerDiv = document.createElement('div');
+                headerDiv.className = 'wish-header';
+                
+                const nameSpan = document.createElement('span');
+                nameSpan.className = 'wish-name';
+                nameSpan.textContent = wish.name;
+                
+                const dateSpan = document.createElement('span');
+                dateSpan.className = 'wish-date';
+                dateSpan.textContent = wish.date;
+                
+                headerDiv.appendChild(nameSpan);
+                headerDiv.appendChild(dateSpan);
+                
+                // Wish content
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'wish-content';
+                contentDiv.textContent = wish.text;
+                
+                // Wish image if exists
+                let imageDiv;
+                if (wish.image) {
+                    imageDiv = document.createElement('div');
+                    const img = document.createElement('img');
+                    img.src = wish.image;
+                    img.className = 'wish-image';
+                    img.alt = 'Gambar ucapan dari ' + wish.name;
+                    imageDiv.appendChild(img);
+                }
+                
+                // Wish actions
+                const actionsDiv = document.createElement('div');
+                actionsDiv.className = 'wish-actions';
+                
+                // Reaction buttons
+                const reactions = ['👍', '❤️', '🤲'];
+                reactions.forEach(reaction => {
+                    const reactionBtn = document.createElement('button');
+                    reactionBtn.className = 'reaction-btn';
+                    reactionBtn.textContent = reaction;
+                    reactionBtn.dataset.reaction = reaction;
+                    
+                    const countSpan = document.createElement('span');
+                    countSpan.className = 'reaction-count';
+                    countSpan.textContent = wish.reactions[reaction] || '';
+                    
+                    const reactionContainer = document.createElement('span');
+                    reactionContainer.appendChild(reactionBtn);
+                    reactionContainer.appendChild(countSpan);
+                    
+                    reactionBtn.addEventListener('click', function() {
+                        addReaction(wish.id, reaction);
+                    });
+                    
+                    actionsDiv.appendChild(reactionContainer);
+                });
+                
+                // Reply button
+                const replyBtn = document.createElement('button');
+                replyBtn.className = 'reply-btn';
+                replyBtn.textContent = 'Balas';
+                replyBtn.addEventListener('click', function() {
+                    showReplyForm(wish.id);
+                });
+                
+                actionsDiv.appendChild(replyBtn);
+                
+                // Replies container
+                let repliesDiv;
+                if (wish.replies.length > 0) {
+                    repliesDiv = document.createElement('div');
+                    repliesDiv.className = 'replies-container';
+                    
+                    wish.replies.forEach(reply => {
+                        const replyElement = createReplyElement(reply);
+                        repliesDiv.appendChild(replyElement);
+                    });
+                }
+                
+                // Build wish element
+                wishDiv.appendChild(headerDiv);
+                wishDiv.appendChild(contentDiv);
+                
+                if (imageDiv) {
+                    wishDiv.appendChild(imageDiv);
+                }
+                
+                wishDiv.appendChild(actionsDiv);
+                
+                if (repliesDiv) {
+                    wishDiv.appendChild(repliesDiv);
+                }
+                
+                return wishDiv;
+            }
+            
+            function createReplyElement(reply) {
+                const replyDiv = document.createElement('div');
+                replyDiv.className = 'reply-item';
+                
+                const headerDiv = document.createElement('div');
+                headerDiv.className = 'wish-header';
+                
+                const nameSpan = document.createElement('span');
+                nameSpan.className = 'wish-name';
+                nameSpan.textContent = reply.name;
+                
+                const dateSpan = document.createElement('span');
+                dateSpan.className = 'wish-date';
+                dateSpan.textContent = reply.date;
+                
+                headerDiv.appendChild(nameSpan);
+                headerDiv.appendChild(dateSpan);
+                
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'wish-content';
+                contentDiv.textContent = reply.text;
+                
+                replyDiv.appendChild(headerDiv);
+                replyDiv.appendChild(contentDiv);
+                
+                return replyDiv;
+            }
+            
+            function addReaction(wishId, reaction) {
+                const wish = allWishes.find(w => w.id === wishId);
+                if (!wish) return;
+                
+                // Initialize reactions object if not exists
+                if (!wish.reactions) {
+                    wish.reactions = {};
+                }
+                
+                // Toggle reaction
+                wish.reactions[reaction] = wish.reactions[reaction] ? 
+                    wish.reactions[reaction] + 1 : 1;
+                
+                // Save and refresh
+                localStorage.setItem(wishesKey, JSON.stringify(allWishes));
                 
                 // Update UI
-                const totalReactions = Object.values(wishes[wishIndex].reactions).reduce((a, b) => a + b, 0);
-                document.getElementById(`like-count-${postId}`).textContent = totalReactions;
-            }
-        }
-        
-        // Toggle form balasan
-        function toggleReplyForm(postId) {
-            const form = document.getElementById(`reply-form-${postId}`);
-            form.style.display = form.style.display === 'block' ? 'none' : 'block';
-        }
-        
-        // Kirim balasan
-        function postReply(postId) {
-            const form = document.getElementById(`reply-form-${postId}`);
-            const textarea = form.querySelector('textarea');
-            const text = textarea.value.trim();
-            
-            if (!text) {
-                alert('Silakan tulis balasan terlebih dahulu');
-                return;
+                const wishElement = document.querySelector(`.wish-item[data-id="${wishId}"]`);
+                const reactionCount = wishElement.querySelector(`button[data-reaction="${reaction}"] + .reaction-count`);
+                reactionCount.textContent = wish.reactions[reaction];
             }
             
-            const wishIndex = wishes.findIndex(w => w.id === postId);
-            if (wishIndex !== -1) {
-                const senderName = getSenderName();
-                const newComment = {
-                    id: wishes[wishIndex].comments.length + 1,
-                    name: senderName,
+            function showReplyForm(wishId) {
+                const wishElement = document.querySelector(`.wish-item[data-id="${wishId}"]`);
+                const repliesContainer = wishElement.querySelector('.replies-container') || 
+                    document.createElement('div');
+                
+                if (!wishElement.querySelector('.reply-form')) {
+                    repliesContainer.className = 'replies-container';
+                    
+                    const formDiv = document.createElement('div');
+                    formDiv.className = 'reply-form';
+                    
+                    const textarea = document.createElement('textarea');
+                    textarea.placeholder = 'Tulis balasan...';
+                    
+                    const btn = document.createElement('button');
+                    btn.className = 'submit-btn';
+                    btn.textContent = 'Kirim Balasan';
+                    btn.style.marginTop = '10px';
+                    
+                    formDiv.appendChild(textarea);
+                    formDiv.appendChild(btn);
+                    
+                    btn.addEventListener('click', function() {
+                        const replyText = textarea.value.trim();
+                        if (replyText) {
+                            addReply(wishId, replyText);
+                            formDiv.remove();
+                        }
+                    });
+                    
+                    repliesContainer.prepend(formDiv);
+                    wishElement.appendChild(repliesContainer);
+                }
+            }
+            
+            function addReply(wishId, text) {
+                const wish = allWishes.find(w => w.id === wishId);
+                if (!wish) return;
+                
+                // Initialize replies array if not exists
+                if (!wish.replies) {
+                    wish.replies = [];
+                }
+                
+                const newReply = {
+                    name: userName,
+                    date: new Date().toLocaleString('id-ID'),
                     text: text
                 };
                 
-                wishes[wishIndex].comments.push(newComment);
-                renderWishes();
-                textarea.value = '';
-                document.getElementById(`reply-form-${postId}`).style.display = 'none';
+                wish.replies.unshift(newReply);
+                localStorage.setItem(wishesKey, JSON.stringify(allWishes));
+                
+                // Update UI
+                const wishElement = document.querySelector(`.wish-item[data-id="${wishId}"]`);
+                const repliesContainer = wishElement.querySelector('.replies-container');
+                const replyElement = createReplyElement(newReply);
+                
+                if (repliesContainer) {
+                    repliesContainer.insertBefore(replyElement, repliesContainer.firstChild);
+                }
             }
-        }
-        
-        // Inisialisasi
-        renderWishes();
+        });
     </script>
 </body>
 
