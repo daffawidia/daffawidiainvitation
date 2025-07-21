@@ -397,18 +397,6 @@ body {
     color: white;
 }
 
-.rsvp button {
-    background-color: var(--red);
-    color: white;
-    border: 1px solid var(--red);
-}
-
-.rsvp button:hover {
-    background-color: white;
-    color: var(--red);
-    border: 1px solid white;
-}
-
 .wishes-section {
     margin-top: 50px;
     padding: 30px 0;
@@ -511,15 +499,20 @@ textarea {
 .wish-name {
     font-weight: 500;
     font-size: 16px;
+    color: white;
+    text-shadow: var(--shadow);
 }
 
 .wish-date {
     font-size: 12px;
-    color: var(--secondary-color);
+    color: white;
+    text-shadow: var(--shadow);
 }
 
 .wish-content {
     margin-bottom: 15px;
+    color: white;
+    text-shadow: var(--shadow);
 }
 
 .wish-image {
@@ -554,7 +547,7 @@ textarea {
     border: none;
     cursor: pointer;
     font-size: 14px;
-    color: var(--secondary-color);
+    color: white;
     margin-left: auto;
 }
 
